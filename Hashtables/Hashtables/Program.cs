@@ -9,18 +9,20 @@ namespace Hashtables
     internal class Program
     {
         static void Main(string[] args)
-        {         
-            MyMapNode<int, string> find = new MyMapNode<int, string>(5);          
-            find.Add(0, "to");
-            find.Add(1, "be");
-            find.Add(2, "or");
-            find.Add(3, "not");
-            find.Add(4, "to");
-            find.Add(5, "be");          
-            find.Findthefrequency("to");
-            find.Findthefrequency("be");
-            find.Findthefrequency("or");
-            find.Findthefrequency("not");
+        {          
+            MyMapNode<int, string> find = new MyMapNode<int, string>(5);
+            int i = 0;
+            string mystring = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";           
+            string[] array = mystring.Split(' ');           
+            foreach (var value in array)
+            {
+                find.Add(i, value);
+                i++;
+            }          
+            find.Findthefrequency("paranoid");
+            find.Findthefrequency("because");
+            find.Findthefrequency("are");
+            find.Findthefrequency("but");
             Console.ReadKey();
         }
     }
